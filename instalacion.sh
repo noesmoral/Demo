@@ -1,5 +1,5 @@
-mv Imagenes /home/pi/Desktop
-mv Grabaciones /home/pi/Desktop
+mkdir /home/pi/Desktop/Imagenes
+mkdir /home/pi/Desktop/Grabaciones
 mv Interfaz /home/pi/Desktop
 mv Diccionario /home/pi
 mkdir /home/pi/pocketsphinx
