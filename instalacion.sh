@@ -15,7 +15,7 @@ sudo echo "@xset s off" >> /home/pi/.config/lxsession/LXDE-pi/autostart
 sudo echo "@xset -dpms" >> /home/pi/.config/lxsession/LXDE-pi/autostart
 sudo echo "@xset s noblank" >> /home/pi/.config/lxsession/LXDE-pi/autostart
 sudo echo "sleep(5)" >> /home/pi/.config/lxsession/LXDE-pi/autostart
-sudo echo "sudo python /home/pi/Desktop/Interfaz/lanzar.py &" >> /home/pi/.config/lxsession/LXDE-pi/autostart
+sudo echo "sudo python /home/pi/Desktop/Interfaz/menu.py &" >> /home/pi/.config/lxsession/LXDE-pi/autostart
 
 sudo apt-get install ppp wvdial -y
 sudo apt-get install hostapd isc-dhcp-server -y
