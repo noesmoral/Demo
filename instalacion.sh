@@ -4,7 +4,9 @@ sudo mkdir /home/pi/Desktop/Capturas
 sudo cp -r Interfaz /home/pi/Desktop
 sudo cp -r Diccionario /home/pi
 sudo mkdir /home/pi/pocketsphinx
+sudo cp cancion /home/pi/Desktop
 cd /home/pi/pocketsphinx
+
 
 sudo apt-get update -y
 sudo apt-get upgrade -y
