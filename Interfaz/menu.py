@@ -4,6 +4,7 @@ import pygame
 import time
 import threading
 import os
+import RPi.GPIO as GPIO
 
 import moduloCamara
 import moduloQRN
@@ -15,6 +16,10 @@ C=moduloCamara.CAMARA()
 CR=moduloEnvioCorreo.CORREO()
 QR=moduloQRN.QR()
 CONV=moduloConversorTexto.CONVERSOR()
+
+GPIO.setwarnings(False)
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(17, GPIO.OUT)
 
 pygame.init()
 pygame.mixer.quit()
@@ -192,6 +197,10 @@ def contador():
                                 numfilasAnterior = longitud
                                 frase=palabra[numfilasAnterior-1]
                                 mostrarTextoMenu5(frase)
+                                if frase=="HOLA" or frase=="LED":
+                                        GPIO.output(17, True)
+                                elif frase=="ADIOS":
+                                        GPIO.output(17, False)
                                 time.sleep(1)
                 else:
                         time.sleep(1)
@@ -346,4 +355,5 @@ while mainloop:
     pygame.display.flip()
  
 pygame.quit()
+GPIO.output(17, False)
 
