@@ -4,17 +4,13 @@ sudo mkdir /home/pi/Desktop/Capturas
 sudo cp -r Interfaz /home/pi/Desktop
 sudo cp -r Diccionario /home/pi
 sudo mkdir /home/pi/pocketsphinx
-sudo cp cancion /home/pi/Desktop
+sudo cp cancion.mp3 /home/pi/Desktop
+sudo cp mensaje.txt /home/pi/Desktop
 cd /home/pi/pocketsphinx
-
 
 sudo apt-get update -y
 sudo apt-get upgrade -y
 
-sudo echo "@xset s off" >> /home/pi/.config/lxsession/LXDE-pi/autostart
-sudo echo "@xset -dpms" >> /home/pi/.config/lxsession/LXDE-pi/autostart
-sudo echo "@xset s noblank" >> /home/pi/.config/lxsession/LXDE-pi/autostart
-sudo echo "sleep(5)" >> /home/pi/.config/lxsession/LXDE-pi/autostart
 sudo echo "sudo python /home/pi/Desktop/Interfaz/menu.py &" >> /home/pi/.config/lxsession/LXDE-pi/autostart
 
 sudo apt-get install ppp wvdial -y
@@ -38,6 +34,8 @@ sudo apt-get install mpg321 -y
 sudo apt-get install lame -y
 sudo apt-get install festival -y
 sudo apt-get install espeak -y
+
+sudo apt-get install bison libasound2-dev python-dev libportaudio-dev python-pyaudio swig -y
 
 sudo wget https://sourceforge.net/projects/cmusphinx/files/sphinxbase/5prealpha/sphinxbase-5prealpha.tar.gz/download -O sphinxbase.tar.gz
 sudo wget https://sourceforge.net/projects/cmusphinx/files/pocketsphinx/5prealpha/pocketsphinx-5prealpha.tar.gz/download -O pocketsphinx.tar.gz
