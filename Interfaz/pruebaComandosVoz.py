@@ -1,9 +1,5 @@
 #!/usr/bin/python
-import moduloCamara
-import moduloQRN
-import moduloEnvioCorreo
-import moduloConversorTexto
-
+import moduloVoz
 import os,signal
 import subprocess, time
 import RPi.GPIO as GPIO
@@ -11,11 +7,6 @@ import RPi.GPIO as GPIO
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(17, GPIO.OUT) ## GPIO 17 como salida
-
-C=moduloCamara.CAMARA()
-CR=moduloEnvioCorreo.CORREO()
-QR=moduloQRN.QR()
-CONV=moduloConversorTexto.CONVERSOR()
 
 def contador():
 	try:
@@ -63,15 +54,14 @@ def contador():
 try:
 	os.system("rm /home/pi/Desktop/registro.txt")
 
-	proc = subprocess.Popen('sudo pocketsphinx_continuous -lm /home/pi/Diccionario/9586.lm -dict /home/pi/Diccionario/9586.dic > /home/pi/Desktop/registro.txt -adcdev sysdefault -inmic yes',shell=True)
-	print proc.pid
-	
-	time.sleep(1)
+        V=moduloVoz.VOZ()
 
-	contador()
-	
-	os.killpg(os.getpgid(proc.pid), signal.SIGKILL)
+        time.sleep(1)
 
+        contador()
+	
+        V.close()
+        
 except Exception as e:
 	print(e)
-
+        V.close()

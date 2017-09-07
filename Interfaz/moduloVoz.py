@@ -13,14 +13,11 @@ class VOZ():
 		try:
 			os.system("rm /home/pi/Desktop/registro.txt")
 
-			self.proc = subprocess.Popen('sudo pocketsphinx_continuous -lm /home/pi/Diccionario/9586.lm -dict /home/pi/Diccionario/9586.dic > /home/pi/Desktop/registro.txt -adcdev sysdefault -inmic yes',stdout=subprocess.PIPE,shell=True)
-			#self.proc = subprocess.Popen('sudo pocketsphinx_continuous -lm /home/pi/Diccionario/comandosN1/5887.lm -dict /home/pi/Diccionario/comandosN1/5887.dic > /home/pi/Desktop/registro.txt -adcdev sysdefault -inmic yes -samprate 16000',stdout=subprocess.PIPE,shell=True)
+			subprocess.Popen('sudo pocketsphinx_continuous -lm /home/pi/Diccionario/9586.lm -dict /home/pi/Diccionario/9586.dic > /home/pi/Desktop/registro.txt -adcdev sysdefault -inmic yes',stdout=subprocess.PIPE,shell=True)
 			time.sleep(1)
 
 		except Exception as e:
 			print(e)
 
 	def close(self):
-		print "PID"
-		print os.getpgid(self.proc.pid)
-		os.killpg(os.getpgid(self.proc.pid), signal.SIGTERM)
+                os.system("sudo pkill pocketsphinx_co")
