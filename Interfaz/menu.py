@@ -18,7 +18,7 @@ CONV=moduloConversorTexto.CONVERSOR()
 
 pygame.init()
 pygame.mixer.quit()
-screen=pygame.display.set_mode((800,480))
+screen=pygame.display.set_mode((800,480),pygame.FULLSCREEN)
 WHITE = (255, 255, 255)
 myfont = pygame.font.SysFont("monospace", 85)
 
