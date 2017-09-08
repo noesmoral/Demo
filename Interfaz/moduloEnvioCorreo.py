@@ -47,7 +47,7 @@ class CORREO():
 		msg.attach(MIMEText(mensaje))
 
 		#hacemos la captura antes de enviar el mensaje nuevo
-		C.captura(ruta='/home/pi/Desktop/Capturas/')	
+		C.captura(ruta='/home/pi/Desktop/Capturas/',resolucionAncho=400,resolucionAlto=200)	
 		
 		#adjuntamos fichero de texto pero puede ser cualquer tipo de archivo
 		##cargamos el archivo a adjuntar de la ruta definida por el programa
