@@ -1,0 +1,1 @@
+Segundo mensaje de prueba, almacenado en un fichero.

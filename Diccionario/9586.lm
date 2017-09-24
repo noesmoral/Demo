@@ -1,0 +1,53 @@
+Language model created by QuickLM on Tue Aug  8 11:55:12 EDT 2017
+Copyright (c) 1996-2010 Carnegie Mellon University and Alexander I. Rudnicky
+
+The model is in standard ARPA format, designed by Doug Paul while he was at MITRE.
+
+The code that was used to produce this language model is available in Open Source.
+Please visit http://www.speech.cs.cmu.edu/tools/ for more information
+
+The (fixed) discount mass is 0.5. The backoffs are computed using the ratio method.
+This model based on a corpus of 7 sentences and 9 words
+
+\data\
+ngram 1=9
+ngram 2=14
+ngram 3=7
+
+\1-grams:
+-0.7782 </s> -0.3010
+-0.7782 <s> -0.2218
+-1.6232 ADIOS -0.2218
+-1.6232 APAGAR -0.2218
+-1.6232 AVANZAR -0.2218
+-1.6232 DETENERSE -0.2218
+-1.6232 ENCENDER -0.2218
+-1.6232 HOLA -0.2218
+-1.6232 LED -0.2218
+
+\2-grams:
+-1.1461 <s> ADIOS 0.0000
+-1.1461 <s> APAGAR 0.0000
+-1.1461 <s> AVANZAR 0.0000
+-1.1461 <s> DETENERSE 0.0000
+-1.1461 <s> ENCENDER 0.0000
+-1.1461 <s> HOLA 0.0000
+-1.1461 <s> LED 0.0000
+-0.3010 ADIOS </s> -0.3010
+-0.3010 APAGAR </s> -0.3010
+-0.3010 AVANZAR </s> -0.3010
+-0.3010 DETENERSE </s> -0.3010
+-0.3010 ENCENDER </s> -0.3010
+-0.3010 HOLA </s> -0.3010
+-0.3010 LED </s> -0.3010
+
+\3-grams:
+-0.3010 <s> ADIOS </s>
+-0.3010 <s> APAGAR </s>
+-0.3010 <s> AVANZAR </s>
+-0.3010 <s> DETENERSE </s>
+-0.3010 <s> ENCENDER </s>
+-0.3010 <s> HOLA </s>
+-0.3010 <s> LED </s>
+
+\end\
